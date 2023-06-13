@@ -3,6 +3,8 @@ from pathlib import Path
 from kkbot.utils import load_plug
 import logging
 from . import bot 
+from sys import argv
+
 
 
 logging.basicConfig(format='[%(levelname) 5s /%(asctime)s] %(name)s: %(message)s' , level=logging.WARNING)
@@ -20,4 +22,7 @@ for name in files:
 print("kkbot STARTED & LOADED ALL PLUGINS")
 
 if __name__ == "__main__" :
-  bot.run_until_disconnected()
+  if len(argv) not in (1, 3, 4):
+    bot.disconnect()
+  else:
+    bot.run_until_disconnected()
