@@ -6,7 +6,6 @@ from . import bot
 from sys import argv
 
 
-
 logging.basicConfig(format='[%(levelname) 5s /%(asctime)s] %(name)s: %(message)s' , level=logging.WARNING)
 
 path = "kkbot/plugins/*.py"
